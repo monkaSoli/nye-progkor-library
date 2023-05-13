@@ -29,7 +29,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Cím</th>
                 <th scope="col">Szerző</th>
-                <th scope="col">Sorozat</th>
+                <th scope="col">Könyv Sorozat</th>
                 <th scope="col">Műfaj</th>
             </tr>
         </thread>
@@ -38,8 +38,8 @@
             <th scope="row"
                 th:text="${book.id}"></th>
             <td th:text="${book.title}"></td>
-            <td th:text="${book.artist}"></td>
-            <td th:text="${book.album}"></td>
+            <td th:text="${book.author}"></td>
+            <td th:text="${book.series}"></td>
             <td th:text="${book.genre}">
             <td>
                 <a th:href="@{'/library-catalog/' + ${book.id}}"

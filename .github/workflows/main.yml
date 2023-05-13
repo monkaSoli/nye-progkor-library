@@ -34,7 +34,7 @@ jobs:
           # Overwrite local artifact version
           mvn -B versions:set -DnewVersion="$version" --file pom.xml
           mvn -B deploy --file pom.xml
-          cp "target/music-catalog-${version}.jar" "target/music-catalog.jar"
+          cp "target/library-catalog-${version}.jar" "target/library-catalog.jar"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Log in to the Container registry

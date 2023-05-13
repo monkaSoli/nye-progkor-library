@@ -52,8 +52,8 @@ public class Book {
         return series;
     }
 
-    public void setAlbum(String album) {
-        this.author = album;
+    public void setSeries(String series) {
+        this.series = series;
     }
 
     public Genre getGenre() {

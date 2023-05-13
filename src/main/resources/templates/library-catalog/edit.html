@@ -21,7 +21,7 @@
             <form method="post"
                   th:action="@{/library-catalog/update}">
                 <div class="form-group">
-                    <label for="name">Termék modósító adatlap</label>
+                    <label>Termék modósító adatlap</label>
                 </div>
                 <div class="form-group">
                     <label for="id">ID</label>
@@ -49,7 +49,7 @@
                            th:value="${book.author}"/>
                 </div>
                 <div class="form-group">
-                    <label for="series">Album</label>
+                    <label for="series">Könyv Sorozat</label>
                     <input type="text"
                            id="series"
                            name="series"
@@ -58,17 +58,16 @@
                 </div>
                 <div class="form-group">
                     <label for="genre">Műfaj</label>
-                    <input list="genre"
-                           th:name="genre"
-                           class="form-control"/>
-                    <datalist id="genre">
-                        <option value="FANTASY"></option>
-                        <option value="SCIENCE_FICTION"></option>
-                        <option value="MYSTERY"></option>
-                        <option value="ROMANCE"></option>
-                        <option value="CHILDRENS"></option>
-                        <option value="NONFICTION"></option>
-                    </datalist>
+                    <select id="genre"
+                            th:name="genre"
+                            class="form-control">
+                        <option value="FANTASY">Fantasy</option>
+                        <option value="SCIENCE_FICTION"> Science-Fiction</option>
+                        <option value="MYSTERY">Mystery</option>
+                        <option value="ROMANCE">Romance</option>
+                        <option value="CHILDRENS">Childrens</option>
+                        <option value="NONFICTION">Nonfiction</option>
+                    </select>
                 </div>
                 <button class="btn btn-primary"
                         type="submit">Módosít

@@ -23,7 +23,7 @@
             <form method="post"
                   th:action="@{/library-catalog/create}">
                 <div class="form-group">
-                    <label for="name">Könyv feljegyzése</label>
+                    <label>Könyv feljegyzése</label>
                 </div>
                 <div class="form-group">
                     <label for="title">Cím</label>
@@ -40,7 +40,7 @@
                            class="form-control"/>
                 </div>
                 <div class="form-group">
-                    <label for="series">Sorozat</label>
+                    <label for="series">Könyv Sorozat</label>
                     <input type="text"
                            id="series"
                            th:name="series"
@@ -48,17 +48,16 @@
                 </div>
                 <div class="form-group">
                     <label for="genre">Műfaj</label>
-                    <input list="genre"
-                           th:name="genre"
-                           class="form-control"/>
-                    <datalist id="genre">
-                        <option value="FANTASY"></option>
-                        <option value="SCIENCE_FICTION"></option>
-                        <option value="MYSTERY"></option>
-                        <option value="ROMANCE"></option>
-                        <option value="CHILDRENS"></option>
-                        <option value="NONFICTION"></option>
-                    </datalist>
+                    <select id="genre"
+                            th:name="genre"
+                            class="form-control">
+                        <option value="FANTASY">Fantasy</option>
+                        <option value="SCIENCE_FICTION"> Science-Fiction</option>
+                        <option value="MYSTERY">Mystery</option>
+                        <option value="ROMANCE">Romance</option>
+                        <option value="CHILDRENS">Childrens</option>
+                        <option value="NONFICTION">Nonfiction</option>
+                    </select>
                 </div>
 
                 <button class="btn btn-primary pt-2"
