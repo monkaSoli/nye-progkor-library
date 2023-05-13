@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Könyv feljegyzése</title>
+
+    <link rel="stylesheet"
+          th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}"/>
+    <script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.min.js}"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <h3 class="pt-5">Könyv feljegyzése</h3>
+
+    <div class="row">
+        <div class="col-md-4 mt-5">
+            <form method="post"
+                  th:action="@{/library-catalog/create}">
+                <div class="form-group">
+                    <label for="name">Könyv feljegyzése</label>
+                </div>
+                <div class="form-group">
+                    <label for="title">Cím</label>
+                    <input type="text"
+                           id="title"
+                           th:name="title"
+                           class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <label for="author">Szerző</label>
+                    <input type="text"
+                           id="author"
+                           th:name="author"
+                           class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <label for="series">Sorozat</label>
+                    <input type="text"
+                           id="series"
+                           th:name="series"
+                           class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <label for="genre">Műfaj</label>
+                    <input list="genre"
+                           th:name="genre"
+                           class="form-control"/>
+                    <datalist id="genre">
+                        <option value="FANTASY"></option>
+                        <option value="SCIENCE_FICTION"></option>
+                        <option value="MYSTERY"></option>
+                        <option value="ROMANCE"></option>
+                        <option value="CHILDRENS"></option>
+                        <option value="NONFICTION"></option>
+                    </datalist>
+                </div>
+
+                <button class="btn btn-primary pt-2"
+                        type="submit">Feljegyzés
+                </button>
+                <a th:href="@{/library-catalog}"
+                   class="btn btn-secondary pt-2"
+                   type="submit">Vissza a listához</a>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<script>
+
+</script>
+
+</body>
+</html>
