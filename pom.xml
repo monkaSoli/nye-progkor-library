@@ -123,12 +123,12 @@
 								<limit>
 									<counter>LINE</counter>
 									<value>COVEREDRATIO</value>
-									<minimum>0</minimum>
+									<minimum>${coverage.lineLimit}</minimum>
 								</limit>
 								<limit>
 									<counter>BRANCH</counter>
 									<value>COVEREDRATIO</value>
-									<minimum>0</minimum>
+									<minimum>${coverage.branchLimit}</minimum>
 								</limit>
 							</limits>
 						</rule>

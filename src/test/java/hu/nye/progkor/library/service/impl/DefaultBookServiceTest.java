@@ -3,8 +3,7 @@ package hu.nye.progkor.library.service.impl;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.mockito.BDDMockito.given;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.verifyNoMoreInteractions;
+import static org.mockito.Mockito.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -81,10 +80,49 @@ class DefaultBookServiceTest {
     }
 
     @Test
-    void updateBook() {
+    void updateBookShouldDelegateToTheRepositoryAndReturnUpdatedBook() {
+        // Given
+        final Book updatedBook = new Book(DUMMY_BOOK_ID, "newTitle", "newAuthor", "newSeries", Genre.FANTASY);
+        given(bookRepository.update(updatedBook)).willReturn(updatedBook);
+
+        // When
+        final Book actual = underTest.updateBook(updatedBook);
+
+        // Then
+        assertThat(actual, equalTo(updatedBook));
+        verify(bookRepository).update(updatedBook);
+        verifyNoMoreInteractions(bookRepository);
     }
 
     @Test
-    void deleteBookById() {
+    void deleteBookByIdShouldDelegateToTheRepository() {
+        // Given
+
+        // When
+        underTest.deleteBookById(DUMMY_BOOK_ID);
+
+        // Then
+        verify(bookRepository).deleteById(DUMMY_BOOK_ID);
+        verifyNoMoreInteractions(bookRepository);
     }
+
+
+    @Test
+    void retrieveBookByIdShouldReturnEmptyOptionalWhenBookIsNotFound() {
+        // Given
+        final Long nonExistingId = 2L;
+        given(bookRepository.getById(nonExistingId)).willReturn(Optional.empty());
+
+        // When
+        final Optional<Book> actual = underTest.retrieveBookById(nonExistingId);
+
+        // Then
+        assertThat(actual, equalTo(Optional.empty()));
+        verify(bookRepository).getById(nonExistingId);
+        verifyNoMoreInteractions(bookRepository);
+    }
+
+
+
+
 }
