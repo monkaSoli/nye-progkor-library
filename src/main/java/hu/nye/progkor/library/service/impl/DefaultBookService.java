@@ -19,8 +19,8 @@ public class DefaultBookService implements BookService {
     private final Repository<Book, Long> bookRepository;
 
     @Autowired
-    public DefaultBookService(Repository<Book, Long> songRepository) {
-        this.bookRepository = songRepository;
+    public DefaultBookService(Repository<Book, Long> bookRepository) {
+        this.bookRepository = bookRepository;
     }
 
     @Override
