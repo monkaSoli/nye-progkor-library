@@ -22,12 +22,12 @@ import hu.nye.progkor.library.service.BookService;
  */
 @RestController
 @RequestMapping("/api/v1/book")
-public class LibraryCatalogRestController {
+public class LibraryRestController {
 
     private final BookService bookService;
 
     @Autowired
-    public LibraryCatalogRestController(BookService bookService) {
+    public LibraryRestController(BookService bookService) {
         this.bookService = bookService;
     }
 

@@ -20,12 +20,12 @@ import hu.nye.progkor.library.service.BookService;
  */
 @Controller
 @RequestMapping("/library-catalog")
-public class LibraryCatalogController {
+public class LibraryController {
 
     private final BookService bookService;
 
     @Autowired
-    public LibraryCatalogController(BookService bookService) {
+    public LibraryController(BookService bookService) {
         this.bookService = bookService;
     }
 
