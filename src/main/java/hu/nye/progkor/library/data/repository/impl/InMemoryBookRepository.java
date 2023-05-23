@@ -17,10 +17,10 @@ public class InMemoryBookRepository implements Repository<Book, Long> {
     private static final Map<Long, Book> STORAGE = new HashMap<>();
 
     @Override
-    public Book save(Book song) {
+    public Book save(Book book) {
         Long id = STORAGE.size() + 1L;
-        song.setId(id);
-        STORAGE.put(id, song);
+        book.setId(id);
+        STORAGE.put(id, book);
         return STORAGE.get(id);
     }
 

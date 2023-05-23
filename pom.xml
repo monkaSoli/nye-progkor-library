@@ -15,7 +15,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<name>library-catalog</name>
-	<description>Demo project for Prog. Envs.</description>
+	<description>Library Project for ProgKor</description>
 
 	<properties>
 		<java.version>17</java.version>
@@ -179,6 +179,13 @@
 
 		</plugins>
 	</build>
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub Packages</name>
+			<url>https://maven.pkg.github.com/monkaSoli/nye-progkor-library</url>
+		</repository>
+	</distributionManagement>
 
 
 </project>

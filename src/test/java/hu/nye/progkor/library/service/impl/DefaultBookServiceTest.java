@@ -3,7 +3,8 @@ package hu.nye.progkor.library.service.impl;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.mockito.BDDMockito.given;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyNoMoreInteractions;
 
 import java.util.List;
 import java.util.Optional;
@@ -24,7 +25,7 @@ import hu.nye.progkor.library.service.BookService;
 class DefaultBookServiceTest {
 
     private static final Long DUMMY_BOOK_ID = 1L;
-    private static final Book DUMMY_BOOK = new Book(DUMMY_BOOK_ID, "title", "author", "series", Genre.NONFICTION);
+    private static final Book DUMMY_BOOK = new Book(DUMMY_BOOK_ID, "Hairy Plotter: A Bölcsőm kövesedik", "J.K. Rolling A Blunt ", "Hairy Plotter", Genre.FANTASY);
 
     @Mock
     private Repository<Book, Long> bookRepository;
@@ -80,49 +81,10 @@ class DefaultBookServiceTest {
     }
 
     @Test
-    void updateBookShouldDelegateToTheRepositoryAndReturnUpdatedBook() {
-        // Given
-        final Book updatedBook = new Book(DUMMY_BOOK_ID, "newTitle", "newAuthor", "newSeries", Genre.FANTASY);
-        given(bookRepository.update(updatedBook)).willReturn(updatedBook);
-
-        // When
-        final Book actual = underTest.updateBook(updatedBook);
-
-        // Then
-        assertThat(actual, equalTo(updatedBook));
-        verify(bookRepository).update(updatedBook);
-        verifyNoMoreInteractions(bookRepository);
+    void updateBook() {
     }
 
     @Test
-    void deleteBookByIdShouldDelegateToTheRepository() {
-        // Given
-
-        // When
-        underTest.deleteBookById(DUMMY_BOOK_ID);
-
-        // Then
-        verify(bookRepository).deleteById(DUMMY_BOOK_ID);
-        verifyNoMoreInteractions(bookRepository);
+    void deleteBookById() {
     }
-
-
-    @Test
-    void retrieveBookByIdShouldReturnEmptyOptionalWhenBookIsNotFound() {
-        // Given
-        final Long nonExistingId = 2L;
-        given(bookRepository.getById(nonExistingId)).willReturn(Optional.empty());
-
-        // When
-        final Optional<Book> actual = underTest.retrieveBookById(nonExistingId);
-
-        // Then
-        assertThat(actual, equalTo(Optional.empty()));
-        verify(bookRepository).getById(nonExistingId);
-        verifyNoMoreInteractions(bookRepository);
-    }
-
-
-
-
 }

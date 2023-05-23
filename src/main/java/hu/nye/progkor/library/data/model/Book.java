@@ -3,7 +3,7 @@ package hu.nye.progkor.library.data.model;
 import java.util.Objects;
 
 /**
- * Model class for songs.
+ * Model class for bookss.
  */
 public class Book {
 
