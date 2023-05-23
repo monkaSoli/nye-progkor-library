@@ -25,7 +25,7 @@ import hu.nye.progkor.library.service.BookService;
 class DefaultBookServiceTest {
 
     private static final Long DUMMY_BOOK_ID = 1L;
-    private static final Book DUMMY_BOOK = new Book(DUMMY_BOOK_ID, "Hairy Plotter: A Bölcsőm kövesedik", "J.K. Rolling A Blunt ", "Hairy Plotter", Genre.FANTASY);
+    private static final Book DUMMY_BOOK = new Book(DUMMY_BOOK_ID, "Hairy Plotter: A Bölcsőm kövesedik", "J.K. Rolling A Blunt ", "Hairy Plotter", Genre.Fantasy);
 
     @Mock
     private Repository<Book, Long> bookRepository;
