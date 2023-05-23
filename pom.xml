@@ -109,11 +109,11 @@
 				</executions>
 				<configuration>
 					<excludes>
-						<exclude>hu\nye\progkor\librarycatalog\data\model\**</exclude>
-						<exclude>hu\nye\progkor\librarycatalog\web\controller\**</exclude>
-						<exclude>hu\nye\progkor\librarycatalog\LibraryCatalogApplication.class</exclude>
-						<exclude>hu\nye\progkor\librarycatalog\data\repository\**</exclude>
-						<exclude>hu\nye\progkor\librarycatalog\web\configuration\**</exclude>
+						<exclude>hu\nye\progkor\library\data\model\**</exclude>
+						<exclude>hu\nye\progkor\library\web\controller\**</exclude>
+						<exclude>hu\nye\progkor\library\LibraryCatalogApplication.class</exclude>
+						<exclude>hu\nye\progkor\library\data\repository\**</exclude>
+						<exclude>hu\nye\progkor\library\web\configuration\**</exclude>
 						<exclude>*Test</exclude>
 					</excludes>
 					<rules>

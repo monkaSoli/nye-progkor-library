@@ -80,11 +80,5 @@ class DefaultBookServiceTest {
         verifyNoMoreInteractions(bookRepository);
     }
 
-    @Test
-    void updateBook() {
-    }
 
-    @Test
-    void deleteBookById() {
-    }
 }
