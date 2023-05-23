@@ -4,7 +4,7 @@ on: push
 
 env:
   DOCKER_REGISTRY: ghcr.io
-  DOCKER_IMAGE_NAME: ${{ github.repository }}
+  DOCKER_IMAGE_NAME: 'monkasoli/nye-progkor-library'
 
 jobs:
   build:
