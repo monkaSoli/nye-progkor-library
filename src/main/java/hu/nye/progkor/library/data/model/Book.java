@@ -3,7 +3,7 @@ package hu.nye.progkor.library.data.model;
 import java.util.Objects;
 
 /**
- * Model class for bookss.
+ * Model class for books.
  */
 public class Book {
 
@@ -102,7 +102,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Song{"
+        return "Book{"
                 + "id=" + id
                 + ", title='" + title + '\''
                 + ", author='" + author + '\''

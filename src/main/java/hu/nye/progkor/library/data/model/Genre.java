@@ -1,7 +1,7 @@
 package hu.nye.progkor.library.data.model;
 
 /**
- * Enum for music genre selection.
+ * Enum for book genre selection.
  */
 public enum Genre {
     FANTASY,

@@ -6,45 +6,45 @@ import java.util.Optional;
 import hu.nye.progkor.library.data.model.Book;
 
 /**
- * A service for managing songs in the music catalog.
+ * A service for managing books in the music catalog.
  */
 public interface BookService {
 
     /**
-     * Creates a new song.
+     * Creates a new book.
      *
-     * @param book the song to create
-     * @return the created song
+     * @param book the book to create
+     * @return the created book
      */
     Book createBook(Book book);
 
     /**
      * Retrieves a book by its id.
      *
-     * @param id the id of the song to retrieve
-     * @return the retrieved song or empty optional if it was not found
+     * @param id the id of the book to retrieve
+     * @return the retrieved book or empty optional if it was not found
      */
     Optional<Book> retrieveBookById(Long id);
 
     /**
-     * Retrieves all the songs in the catalog.
+     * Retrieves all the books in the catalog.
      *
-     * @return the list of found songs
+     * @return the list of found books
      */
     List<Book> retrieveAllBooks();
 
     /**
-     * Updates an existing song.
+     * Updates an existing book.
      *
-     * @param book the song to update
-     * @return the updated song
+     * @param book the book to update
+     * @return the updated book
      */
     Book updateBook(Book book);
 
     /**
-     * Deletes a song by its id.
+     * Deletes a book by its id.
      *
-     * @param id the id of the song to delete
+     * @param id the id of the book to delete
      */
     void deleteBookById(Long id);
 }

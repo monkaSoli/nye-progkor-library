@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * Class to provide an entry point for the music catalog webservice.
+ * Class to provide an entry point for the library catalog webservice.
  */
 @SpringBootApplication
 public class LibraryCatalogApplication {
