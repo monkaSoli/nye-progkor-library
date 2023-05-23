@@ -26,8 +26,8 @@
 		<webjars-locator.version>0.42</webjars-locator.version>
 		<jacoco.version>0.8.7</jacoco.version>
 
-		<coverage.branchLimit>60%</coverage.branchLimit>
-		<coverage.lineLimit>60%</coverage.lineLimit>
+		<coverage.branchLimit>100%</coverage.branchLimit>
+		<coverage.lineLimit>100%</coverage.lineLimit>
 		<coverage.type>BUNDLE</coverage.type>
 	</properties>
 

@@ -80,5 +80,30 @@ class DefaultBookServiceTest {
         verifyNoMoreInteractions(bookRepository);
     }
 
+    @Test
+    void updateBookShouldDelegateToTheRepositoryAndReturnUpdatedBook() {
+        // Given
+        given(bookRepository.update(DUMMY_BOOK)).willReturn(DUMMY_BOOK);
+
+        // When
+        final Book actual = underTest.updateBook(DUMMY_BOOK);
+
+        // Then
+        assertThat(actual, equalTo(DUMMY_BOOK));
+        verify(bookRepository).update(DUMMY_BOOK);
+        verifyNoMoreInteractions(bookRepository);
+    }
+    @Test
+    void deleteBookById() {
+        // Given
+        Long bookId = 1L;
+
+        // When
+        underTest.deleteBookById(bookId);
+
+        // Then
+        verify(bookRepository).deleteById(bookId);
+        verifyNoMoreInteractions(bookRepository);
+    }
 
 }
